@@ -26,10 +26,10 @@ const connection = mysql.createConnection({
 );
 
 
-function promptUser() {
+function menuOptions() {
     inquirer
       .prompt({
-        name: "start",
+        name: "task",
         type: "list",
         message: "What task would you like to do?",
         choices: [
@@ -39,8 +39,8 @@ function promptUser() {
           "Exit",
         ],
       })
-      .then(function ({ start }) {
-        switch (start) {
+      .then(function ({ task }) {
+        switch (task) {
           case "View Tables":
             viewTables();
             break;
@@ -52,7 +52,7 @@ function promptUser() {
             break;
           case "Exit":
             connection.end();
-            console.log("Press CTRL + C to EXIT");
+            console.log("------Thankyou, Goodbye!");
             return;
         }
       });
@@ -72,7 +72,7 @@ function promptUser() {
           if (err) throw err;
   
           console.table(data);
-          promptUser();
+          menuOptions();
         });
       });
   }
@@ -121,7 +121,7 @@ function promptUser() {
           function (err, data) {
             if (err) throw err;
             console.log(`Department Added`);
-            promptUser();
+            menuOptions();
           }
         );
       });
@@ -175,7 +175,7 @@ function promptUser() {
             function (err, data) {
               if (err) throw err;
               console.log(`Added role.`);
-              promptUser();
+              menuOptions();
             }
           );
         });
@@ -256,15 +256,14 @@ function promptUser() {
             if (err) throw err;
   
             console.log("Employee Added");
-            promptUser();
+            menuOptions();
           });
         });
     });
   }
-  promptUser();
+  menuOptions();
 
   
     app.listen(PORT, () => {
         console.log(`Server Running ${PORT}`);
-        promptUser();
     });
