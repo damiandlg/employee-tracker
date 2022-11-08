@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const db = require('./db/ connect')
 const app = express();
 
-//express middleware added below
+
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
