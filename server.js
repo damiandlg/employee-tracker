@@ -47,7 +47,8 @@ function menuOptions() {
           case "Add":
             add();
             break;
-          case "Update":
+            //NEED TO WORK ON UPDATE functionality. Diddnt have enough time"
+          case "Update": 
             updateEmployee();
             break;
           case "Exit":
@@ -58,7 +59,7 @@ function menuOptions() {
       });
   }
   
-  
+  //View Table function
   function viewTables() {
     inquirer
       .prompt({
@@ -77,7 +78,7 @@ function menuOptions() {
       });
   }
   
-  // add to the tables
+//Adding Function
   function add() {
     inquirer
       .prompt({
@@ -100,7 +101,8 @@ function menuOptions() {
         }
       });
   }
-  
+
+  //ADD Department Function
   function addDepartment() {
     inquirer
       .prompt({
@@ -126,6 +128,8 @@ function menuOptions() {
         );
       });
   }
+
+  //ADD ROLE FUNCTION
   function addRole() {
     let departmentNames = [];
   
@@ -181,6 +185,8 @@ function menuOptions() {
         });
     });
   }
+
+  //ADD EMPLOYEE FUNCTION
   function addEmployee() {
     let employeeNames = [];
     let roles = [];
