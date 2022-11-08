@@ -1,6 +1,29 @@
 {
   "dependencies": {
+    "express": "^4.18.2",
     "inquirer": "^8.2.4",
     "mysql2": "^2.3.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "jest": "^29.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damiandlg/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiandlg/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/damiandlg/employee-tracker#readme",
+  "description": ""
 }
